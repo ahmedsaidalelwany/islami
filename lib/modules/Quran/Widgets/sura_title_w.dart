@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:islami/modules/Quran/quran_view.dart';
 
 class SuraTitleW extends StatelessWidget {
-  const SuraTitleW(
-      {super.key,
-      required this.sura_number,
-      required this.sura_name,
-      required this.ayas_number});
+  const SuraTitleW({
+    super.key,
+    required this.ayas_number,
+    required this.data,
+  });
 
-  final String sura_number;
-  final String sura_name;
   final String ayas_number;
+  final sura_data data;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class SuraTitleW extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            sura_name,
+            data.sura_name,
             style: theme.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
@@ -46,7 +46,7 @@ class SuraTitleW extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            sura_number,
+            data.sura_number,
             style: theme.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),

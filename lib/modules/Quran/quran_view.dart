@@ -301,11 +301,20 @@ class _QuranViewState extends State<QuranView> {
               itemCount: suraNames.length,
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, QuranDetails.routeName);
+                  Navigator.pushNamed(
+                    context,
+                    QuranDetails.routeName,
+                    arguments: sura_data(
+                      sura_number: (index + 1).toString(),
+                      sura_name: suraNames[index],
+                    ),
+                  );
                 },
                 child: SuraTitleW(
-                  sura_number: (index + 1).toString(),
-                  sura_name: suraNames[index],
+                  data: sura_data(
+                    sura_number: (index + 1).toString(),
+                    sura_name: suraNames[index],
+                  ),
                   ayas_number: versesNumber[index].toString(),
                 ),
               ),
@@ -315,4 +324,11 @@ class _QuranViewState extends State<QuranView> {
       ],
     );
   }
+}
+
+class sura_data {
+  final String sura_number;
+  final String sura_name;
+
+  sura_data({required this.sura_number, required this.sura_name});
 }
