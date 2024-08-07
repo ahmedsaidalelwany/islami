@@ -80,7 +80,6 @@ class _QuranDetailsState extends State<QuranDetails> {
   }
 
   List<String> ayas = [];
-
   Future<void> load_quran_data(String sura_number) async {
     String content =
         await rootBundle.loadString('assets/files/$sura_number.txt');
