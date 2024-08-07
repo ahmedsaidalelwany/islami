@@ -8,11 +8,6 @@ class App_theme_manager {
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
-      titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          fontFamily: 'Reem-kufi'),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: primaryColor,
@@ -32,6 +27,37 @@ class App_theme_manager {
       unselectedIconTheme: IconThemeData(
         color: Colors.white,
         size: 28,
+      ),
+    ),
+    dividerTheme: const DividerThemeData(
+      color: primaryColor,
+      space: 20,
+      thickness: 5,
+    ),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'ElMessiri',
+        color: Colors.black,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+        fontFamily: 'ElMessiri',
+        color: Colors.black,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        fontFamily: 'ElMessiri',
+        color: Colors.black,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        fontFamily: 'ElMessiri',
+        color: Colors.black,
       ),
     ),
   );

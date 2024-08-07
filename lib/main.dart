@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami/layout/layout_view.dart';
-import 'package:islami/modules/splash/Splash/splash_view.dart';
 import 'package:islami/theme/app_theme_data.dart';
 
 void main() {
@@ -16,9 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: App_theme_manager.lightTheme,
-      initialRoute: splash_view.routeName,
+      initialRoute: Layout.routeName,
       routes: {
-        splash_view.routeName: (context) => const splash_view(),
         Layout.routeName: (context) => const Layout(),
       },
     );

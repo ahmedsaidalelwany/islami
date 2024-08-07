@@ -2,7 +2,29 @@
 class Assets {
   Assets._();
 
+  static const String elMessiriElMessiriBold =
+      'assets/fonts/ElMessiri/ElMessiri-Bold.ttf';
+  static const String elMessiriElMessiriMedium =
+      'assets/fonts/ElMessiri/ElMessiri-Medium.ttf';
+  static const String elMessiriElMessiriRegular =
+      'assets/fonts/ElMessiri/ElMessiri-Regular.ttf';
+  static const String elMessiriElMessiriSemiBold =
+      'assets/fonts/ElMessiri/ElMessiri-SemiBold.ttf';
+  static const String iconsHadeth = 'assets/icons/hadeth.png';
+  static const String iconsQuran = 'assets/icons/quran.png';
+  static const String iconsRadio = 'assets/icons/radio.png';
+  static const String iconsSebha = 'assets/icons/sebha.png';
   static const String imagesBk1 = 'assets/images/bk1.png';
+  static const String imagesHadithHeader = 'assets/images/hadith_header.png';
   static const String imagesHomeBk = 'assets/images/home-bk.png';
   static const String imagesLogo2 = 'assets/images/logo2.png';
+  static const String imagesQuranHeader = 'assets/images/quran_header.png';
+  static const String reemKufiReemKufiFunBold =
+      'assets/fonts/Reem-kufi/ReemKufiFun-Bold.ttf';
+  static const String reemKufiReemKufiFunMedium =
+      'assets/fonts/Reem-kufi/ReemKufiFun-Medium.ttf';
+  static const String reemKufiReemKufiFunRegular =
+      'assets/fonts/Reem-kufi/ReemKufiFun-Regular.ttf';
+  static const String reemKufiReemKufiFunSemiBold =
+      'assets/fonts/Reem-kufi/ReemKufiFun-SemiBold.ttf';
 }
