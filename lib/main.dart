@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/layout/layout_view.dart';
+import 'package:islami/modules/Quran/quran_details.dart';
 import 'package:islami/theme/app_theme_data.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Layout.routeName,
       routes: {
         Layout.routeName: (context) => const Layout(),
+        QuranDetails.routeName: (context) => const QuranDetails(),
       },
     );
   }

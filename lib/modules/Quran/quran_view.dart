@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/modules/Quran/Widgets/sura_title_w.dart';
+import 'package:islami/modules/Quran/quran_details.dart';
 
 class QuranView extends StatefulWidget {
   const QuranView({super.key});
@@ -297,12 +298,16 @@ class _QuranViewState extends State<QuranView> {
         Expanded(
           child: SizedBox(
             child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 114,
-              itemBuilder: (context, index) => SuraTitleW(
-                sura_number: (index + 1).toString(),
-                sura_name: suraNames[index],
-                ayas_number: versesNumber[index].toString(),
+              itemCount: suraNames.length,
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, QuranDetails.routeName);
+                },
+                child: SuraTitleW(
+                  sura_number: (index + 1).toString(),
+                  sura_name: suraNames[index],
+                  ayas_number: versesNumber[index].toString(),
+                ),
               ),
             ),
           ),
