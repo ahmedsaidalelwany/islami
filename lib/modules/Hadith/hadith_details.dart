@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/core/settings_provider.dart';
 import 'package:islami/modules/Hadith/hadith_view.dart';
+import 'package:provider/provider.dart';
 
 class HadithDetails extends StatefulWidget {
   const HadithDetails({Key? key}) : super(key: key);
@@ -21,11 +23,13 @@ class _HadithDetailsState extends State<HadithDetails> {
     var data = ModalRoute.of(context)?.settings.arguments as hadith_data;
 
     if (hadith_details.isEmpty) load_hadith_data(data.hadithNumber);
-
+    var provider = Provider.of<settingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/home-bk.png'),
+          image: AssetImage(
+            provider.getbackGroundImage(),
+          ),
           fit: BoxFit.cover,
         ),
       ),
@@ -38,7 +42,7 @@ class _HadithDetailsState extends State<HadithDetails> {
               margin: const EdgeInsets.only(
                   top: 20, left: 10, right: 10, bottom: 60),
               decoration: const BoxDecoration(
-                color: Color(0xcdf8f8f8),
+                color: Color(0x2af8f8f8),
                 borderRadius: BorderRadius.all(
                   Radius.circular(25),
                 ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/core/settings_provider.dart';
 import 'package:islami/modules/Hadith/hadith_view.dart';
 import 'package:islami/modules/Quran/quran_view.dart';
 import 'package:islami/modules/Radio/radio_view.dart';
 import 'package:islami/modules/Settings/settings_view.dart';
 import 'package:islami/modules/Tasbih/tasbih.dart';
-import 'package:islami/theme/app_theme_data.dart';
+import 'package:provider/provider.dart';
 
 class Layout extends StatefulWidget {
   const Layout({super.key});
@@ -32,10 +33,14 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var language = AppLocalizations.of(context)!;
+    var provider = Provider.of<settingsProvider>(context);
     return Stack(
       children: [
-        const Image(
-            image: AssetImage('assets/images/home-bk.png'), fit: BoxFit.cover),
+        Image(
+            image: AssetImage(
+              provider.getbackGroundImage(),
+            ),
+            fit: BoxFit.cover),
         Scaffold(
           appBar: AppBar(
             title: Center(
@@ -44,7 +49,6 @@ class _LayoutState extends State<Layout> {
           ),
           body: Screens[selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: App_theme_manager.primaryColor,
             type: BottomNavigationBarType.fixed,
             currentIndex: selectedIndex,
             onTap: (index) {

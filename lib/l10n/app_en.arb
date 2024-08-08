@@ -8,7 +8,11 @@
   "num_versre": "Number of verses",
   "sura_name": "Surah name",
   "sura_num": "Surah number",
-  "hadiths": "Hadiths",
+  "hadiths": "Hadith",
   "radio_name": "Holy Quran Radio Channel",
-  "tasbihnum": "Number of Tasbeeh"
+  "tasbihnum": "Number of Tasbeeh",
+  "language": "Language",
+  "theme": "Theme Mode",
+  "dark": "Dark",
+  "light": "Light"
 }
