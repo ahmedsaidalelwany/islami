@@ -1,4 +1,7 @@
+// ignore_for_file: non_constant_identifier_names, camel_case_types
+
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/modules/Quran/Widgets/sura_title_w.dart';
 import 'package:islami/modules/Quran/quran_details.dart';
 
@@ -246,6 +249,7 @@ class _QuranViewState extends State<QuranView> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var language = AppLocalizations.of(context)!;
     return Column(
       children: [
         Image.asset('assets/images/quran_header.png', scale: 3.5),
@@ -256,7 +260,7 @@ class _QuranViewState extends State<QuranView> {
           children: [
             Expanded(
               child: Text(
-                'عدد الآيات',
+                language.num_versre,
                 style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
@@ -270,7 +274,7 @@ class _QuranViewState extends State<QuranView> {
             ),
             Expanded(
               child: Text(
-                'اسم السورة',
+                language.sura_name,
                 style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
@@ -284,7 +288,7 @@ class _QuranViewState extends State<QuranView> {
             ),
             Expanded(
               child: Text(
-                'رقم السورة',
+                language.sura_num,
                 style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),

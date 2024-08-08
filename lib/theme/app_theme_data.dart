@@ -36,25 +36,25 @@ class App_theme_manager {
     ),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: FontWeight.bold,
         fontFamily: 'ElMessiri',
         color: Colors.black,
       ),
       bodyLarge: TextStyle(
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: FontWeight.w600,
         fontFamily: 'ElMessiri',
         color: Colors.black,
       ),
       bodyMedium: TextStyle(
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: FontWeight.w400,
         fontFamily: 'ElMessiri',
         color: Colors.black,
       ),
       bodySmall: TextStyle(
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: FontWeight.w400,
         fontFamily: 'ElMessiri',
         color: Colors.black,

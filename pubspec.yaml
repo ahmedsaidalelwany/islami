@@ -21,6 +21,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 
   flutter_lints: ^4.0.0
@@ -28,6 +31,7 @@ dev_dependencies:
 
 
 flutter:
+  generate: true
 
 
   uses-material-design: true
@@ -37,6 +41,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/files/
+    - assets/files/hadeth/
 
 
 

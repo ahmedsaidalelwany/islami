@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/modules/Hadith/hadith_view.dart';
 import 'package:islami/modules/Quran/quran_view.dart';
 import 'package:islami/modules/Radio/radio_view.dart';
 import 'package:islami/modules/Settings/settings_view.dart';
-import 'package:islami/modules/Tasbeeh/tasbeeh_view.dart';
+import 'package:islami/modules/Tasbih/tasbih.dart';
 import 'package:islami/theme/app_theme_data.dart';
 
 class Layout extends StatefulWidget {
@@ -18,10 +19,11 @@ class Layout extends StatefulWidget {
 class _LayoutState extends State<Layout> {
   int selectedIndex = 0;
 
+  // ignore: non_constant_identifier_names
   List<Widget> Screens = [
     const QuranView(),
     const HadithView(),
-    const TasbeehView(),
+    const Tasbih(),
     const RadioView(),
     const SettingsView(),
   ];
@@ -29,6 +31,7 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var language = AppLocalizations.of(context)!;
     return Stack(
       children: [
         const Image(
@@ -36,7 +39,7 @@ class _LayoutState extends State<Layout> {
         Scaffold(
           appBar: AppBar(
             title: Center(
-              child: Text('إسلامي', style: theme.textTheme.titleLarge),
+              child: Text(language.islami, style: theme.textTheme.titleLarge),
             ),
           ),
           body: Screens[selectedIndex],
@@ -45,38 +48,38 @@ class _LayoutState extends State<Layout> {
             type: BottomNavigationBarType.fixed,
             currentIndex: selectedIndex,
             onTap: (index) {
-              setState(() {
-                selectedIndex = index;
-              });
+              setState(
+                () {
+                  selectedIndex = index;
+                },
+              );
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage('assets/icons/quran.png'),
                 ),
-                label: 'قرآن',
+                label: language.quran,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage('assets/icons/hadeth.png'),
                 ),
-                label: 'حديث',
+                label: language.hadith,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage('assets/icons/sebha.png'),
                 ),
-                label: 'تسبيح',
+                label: language.tasbih,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage('assets/icons/radio.png'),
-                ),
-                label: 'إذاعة',
+                icon: const Icon(Icons.play_arrow),
+                label: language.radio,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'إعدادات',
+                icon: const Icon(Icons.settings),
+                label: language.settings,
               ),
             ],
           ),
